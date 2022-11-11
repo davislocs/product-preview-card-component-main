@@ -16,7 +16,7 @@ main{
     height: 100vh;
     margin: auto;
     display: flex;
-    background-color: hsl(30, 38%, 92%);;
+    background-color: hsl(30, 38%, 92%);
 }
 .margin-top-30px{
     margin-top: 30px;
@@ -38,7 +38,6 @@ main{
 }
 .image{
     background-image: url("images/image-product-desktop.jpg");
-    background-size: contain;
     background-repeat: no-repeat;
     background-size: 400px 600px;
     border-radius: 10px 0px 0px 10px;
@@ -82,3 +81,78 @@ h1{
     color: hsl(212, 21%, 14%);
     line-height: 1;
 }
+/*************************MOBILE*********************************/
+@media screen and (max-width:400px){
+    body{
+        height: 100vh;
+    }
+    main{
+        width: 340px;
+        height: 95vh;
+        display: block;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        
+} 
+    div{
+        display: block;
+        width: 100%;
+        position: static;
+        top: initial;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+    .image{
+        height: 36vh;
+        background-image: url("images/image-product-mobile.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .image-figcaption{
+        height: 59vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 0px 0px 10px 10px;
+        border: 2px solid white;
+        
+    }
+    .add-to-cart-button{
+        margin-top: 18px;
+        height: 45px;
+        border-radius: 10px;
+    }
+    .margin-30px-30px-linethrough{
+        margin-left: 18px;
+        margin-top: 14px;
+    }
+    .margin-top-30px{
+        margin-top: 18px;
+    }
+    /***********************FONTS*******************************/
+    *{
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .button-name{
+        color: white;
+        font-weight: 700;
+        margin-left: 10px;
+    }
+    .Fraunces-700-50px-darkgreen{
+        font-family: Fraunces;
+        font-size: 30px;
+        color: hsl(158, 36%, 37%);
+    }
+    h1{
+        font-family: Fraunces;
+        font-size: 30px;
+        color: hsl(212, 21%, 14%);
+        line-height: 1;
+    }
+}
+
