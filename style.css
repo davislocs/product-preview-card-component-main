@@ -1,158 +1,111 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-size: 14px;
     font-family: Montserrat;
     font-weight: 500;
-    font-size: 16px;
     color: hsl(228, 12%, 48%);
-    line-height: 1.6;
 }
 body{
     background-color: hsl(30, 38%, 92%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main{
-    width: 800px;
-    height: 100vh;
-    margin: auto;
+    width: 600px;
+    height: 450px;
     display: flex;
-    background-color: hsl(30, 38%, 92%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.margin-top-30px{
-    margin-top: 30px;
+h1,h2,p{
+    margin-bottom: 25px;
 }
-.margin-30px-30px-linethrough{
-    text-decoration: line-through;
-    position: absolute;
-    margin-left: 30px;
-    margin-top: 30px;
-}
-.add-to-cart-button{
-    margin-top: 30px;
-    width: 100%;
-    height: 60px;
-    border: none;
-    border-radius: 10px;
-    background-color: hsl(158, 36%, 37%);
-    cursor: pointer;
-}
-.image{
-    background-image: url("images/image-product-desktop.jpg");
-    background-repeat: no-repeat;
-    background-size: 400px 600px;
-    border-radius: 10px 0px 0px 10px;
-}
-.image-figcaption{
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0px 10px 10px 0px;
+p{
+    line-height: 1.6;
 }
 div{
-    display: inline-block;
     width: 50%;
-    height: 600px;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    height: 100%;
+}
+.image{
+    background-image: url(images/image-product-desktop.jpg);
+    background-size: cover;
+    border: none;
+    border-radius: 10px 0 0 10px;
+} 
+.image-figcaption{
+    background-color: white;
+    padding: 30px 30px 0 30px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+}
+h1, .new-price{
+    font-size: 32px;
+    font-family: Fraunces;
+    font-weight: 700;
+    line-height: 1;
+}
+h1{
+    color: hsl(212, 21%, 14%);
+}
+.new-price{
+    color: hsl(158, 36%, 37%);
+    display: flex;
+    align-items: center;   
+}
+.old-price{
+    color: hsl(228, 12%, 48%);
+    text-decoration: line-through;
+    margin-left: 20px;
+}
+button{
+    width: 100%;
+    height: 50px;
+    background-color: hsl(158, 36%, 37%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 #cart-icon{
     margin-right: 10px;
 }
-.add-to-cart-button:active {
-    background-color: hsl(158, 36%, 17%);
-  }
-/***********************FONTS*******************************/
-.button-name{
+.button-label{
     color: white;
     font-weight: 700;
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
 }
-.Fraunces-700-50px-darkgreen{
-    font-family: Fraunces;
-    font-size: 50px;
-    color: hsl(158, 36%, 37%);
+button:active{
+    background-color: hsl(158, 34%, 15%);
 }
-h1{
-    font-family: Fraunces;
-    font-size: 50px;
-    color: hsl(212, 21%, 14%);
-    line-height: 1;
-}
-/*************************MOBILE*********************************/
-@media screen and (max-width:400px){
-    body{
-        height: 100vh;
-    }
+@media screen and (max-width:650px) {
     main{
-        width: 340px;
-        height: 95vh;
-        display: block;
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        
-} 
+        width: 350px;
+        height: auto;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } 
     div{
-        display: block;
         width: 100%;
-        position: static;
-        top: initial;
-        -webkit-transform: none;
-        -ms-transform: none;
-        transform: none;
     }
     .image{
-        height: 36vh;
-        background-image: url("images/image-product-mobile.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border-radius: 10px 10px 0px 0px;
-    }
+        background-image: url(images/image-product-mobile.jpg);
+        height: 250px;
+        border-radius: 10px 10px 0 0;
+    } 
     .image-figcaption{
-        height: 59vh;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 0px 0px 10px 10px;
-        border: 2px solid white;
-        
+        height: auto;
+        padding: 25px 25px 25px 25px;
+        border-radius: 0 0 10px 10px;
     }
-    .add-to-cart-button{
-        margin-top: 18px;
-        height: 45px;
-        border-radius: 10px;
-    }
-    .margin-30px-30px-linethrough{
-        margin-left: 18px;
-        margin-top: 14px;
-    }
-    .margin-top-30px{
-        margin-top: 18px;
-    }
-    /***********************FONTS*******************************/
-    *{
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    .button-name{
-        color: white;
-        font-weight: 700;
-        margin-left: 10px;
-    }
-    .Fraunces-700-50px-darkgreen{
-        font-family: Fraunces;
-        font-size: 30px;
-        color: hsl(158, 36%, 37%);
-    }
-    h1{
-        font-family: Fraunces;
-        font-size: 30px;
-        color: hsl(212, 21%, 14%);
-        line-height: 1;
+    h1,h2,p{
+        margin-bottom: 15px;
     }
 }
-
