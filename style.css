@@ -38,7 +38,7 @@ div{
     border: none;
     border-radius: 10px 0 0 10px;
 } 
-.image-figcaption{
+.container{
     background-color: white;
     padding: 30px 30px 0 30px;
     border: none;
@@ -100,7 +100,7 @@ button:active{
         height: 250px;
         border-radius: 10px 10px 0 0;
     } 
-    .image-figcaption{
+    .container{
         height: auto;
         padding: 25px 25px 25px 25px;
         border-radius: 0 0 10px 10px;
