@@ -1,0 +1,145 @@
+@import "_config";
+
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin maxWidth($width){
+    width: 100%;
+    max-width: $width;
+}
+
+@mixin fontProporties($clr,$fs,$fw,$lh,$ls){
+    color: $clr;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+@mixin desktop {
+    @media (min-width: 800px){
+        @content;
+    }
+}
+
+body{
+    @include flexCenter(column);
+    background-color: map-get($clr-map, primary)
+}
+
+.main{
+    @include flexCenter(column);
+    @include maxWidth(34.3rem);
+    background-color: map-get($clr-map, secondary);
+    border-radius: 1rem;
+
+    @include desktop {
+        @include flexCenter(row);
+        @include maxWidth(60rem);
+    }
+}
+
+.picture-section{
+
+    filter: brightness(85%);
+
+    @include desktop {
+        width: 50%;
+    }
+
+    &__product-image{
+        
+        img{
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            opacity: 0.95;
+
+            @include desktop{
+                border-radius: 1rem 0 0 1rem;
+            }
+        }
+    }
+}
+
+.info-section{
+    padding: 2.4rem;
+
+    @include desktop {
+        width: 50%;
+        padding: 3.2rem;
+    }
+
+    &__product-category{
+        @include fontProporties(map-get($clr-map, neutral-400), map-get($fs, fs-s), $fw-regular, 1.46rem, 0.5rem);
+        margin-bottom: 1.2rem;
+        font-family: $ff-primary;
+
+        @include desktop{
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__product-title{
+        @include fontProporties(map-get($clr-map, neutral-200), map-get($fs, fs-xxl), $fw-bold, 3.2rem, initial);
+        margin-bottom: 1.6rem;
+        font-family: $ff-secondary;
+
+        @include desktop{
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__product-info{
+        @include fontProporties(map-get($clr-map, neutral-400), map-get($fs, fs-m), $fw-regular, 2.3rem, initial);
+        margin-bottom: 2.4rem;
+        font-family: $ff-primary;
+
+        @include desktop{
+            margin-bottom: 2.9rem;
+        }
+    }
+
+    &__product-price{
+        @include flexCenter(row);
+        justify-content: flex-start;
+        gap: 1.9rem;
+        margin-bottom: 2rem;
+
+        @include desktop{
+            margin-bottom: 3rem;
+        }
+
+        .new-price{
+            @include fontProporties(map-get($clr-map, accent-500), map-get($fs, fs-xxl), $fw-bold, 3.2rem, initial);
+            font-family: $ff-secondary;
+        }
+
+        .price{
+            @include fontProporties(map-get($clr-map, neutral-400), map-get($fs, fs-ms), $fw-regular, 2.3rem, initial);
+            font-family: $ff-primary;
+            text-decoration: line-through;
+        }
+    }
+
+    &__add-to-cart-btn{
+        width: 100%;
+        min-height: 4.8rem;
+        border-radius: 0.8rem;
+        background-color: map-get($clr-map , accent-500);
+        @include flexCenter(row);
+        gap: 1.16rem;
+
+        .btn-name{
+            @include fontProporties(map-get($clr-map, secondary), map-get($fs, fs-m), $fw-bold, 1.7rem, initial);
+            font-family: $ff-primary;
+        }
+    }
+
+    &__add-to-cart-btn:hover{
+        background-color: map-get($clr-map, accent-600 );
+    }
+}
